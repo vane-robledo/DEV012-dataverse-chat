@@ -49,7 +49,7 @@ a través de un sistema de chat impulsado por la
 * Desarrollar una [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
 * Aplicar los conceptos de responsividad en el desarrollo de las vistas
 * Implementar un router para la navegación entre las diferentes
-vistas de la aplicación
+  vistas de la aplicación
 * Integrar una API externa
 * Entender la asincronía en JavaScript
 * Crear una suite de pruebas unitarias que permitan testear código asíncrono
@@ -64,13 +64,11 @@ vistas de la aplicación
   (ES6+), HTML y CSS. Para este proyecto **no está permitido** utilizar
   _frameworks_ o librerías de CSS y JS.
 
-* Reutilizar cierta parte del código del proyecto Dataverse, sobre todo el dataset.
-  Además debes refactorizar el código para que sea más modular y reutilizable
-  implementando nuevas funciones para lograr las funcionalidades requeridas
-  en este proyecto.
+* Es fundamental reutilizar parte del código del proyecto Dataverse, especialmente la sección relacionada con el dataset. Además, es esencial llevar a cabo una refactorización del código con el objetivo de hacerlo más modular y reutilizable. Esto implica la creación de nuevas funciones que permitan alcanzar las funcionalidades requeridas en el proyecto.
 
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando cualquiera de estas opciones:
+* Para este proyecto **no está permitido** utilizar `async/await`.
+
+* El proyecto será entregado subiendo tu código a GitHub (commit/push) y deberás desplegarlo utilizando cualquiera de estas opciones:
   [Vercel](https://vercel.com/) o [Netlify](https://www.netlify.com/).
 
 * La división y organización del trabajo debe permitir, sin excepciones, que
@@ -84,17 +82,13 @@ vistas de la aplicación
   - ¿Se te está haciendo difícil y te cuesta un poco más avanzar? No te quedes
     con las partes "fáciles" del proyecto, conversa, negocia, exige tu oportunidad
     para practicar y aprender lo que se te hace más difícil.
-  Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
+    Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
 
 ## 4. Funcionalidades
 
-Como entregable final tendrás una Single Page Application (SPA) que permita,
-además de **visualizar la data, filtrarla, ordenarla y calcular alguna
-estadística** tal como se hizo en Dataverse, acceder a una página de detalle
-de cada personaje y poder _interactuar_ con
-los personajes o entidades del set de data que utilizaste anteriormente.
+El entregable final será una Single Page Application (SPA) que permitira al usuario **visualizar la información, filtrarla, ordenarla y calcular alguna estadística**, tal como se hizo en Dataverse. Además, deberá permitir  acceder a una página que muestre el detalle de cada personaje para  _interactuar_ con cada una de las entidades del set de datos que utilizaste anteriormente.
 
-Aquí definimos en más detalle las funcionalidades mínimas que debe tener:
+A continuación, detallamos las funcionalidades mínimas que tu proyecto debe cumplir:
 
 * La aplicación debe ser _responsive_
 * La aplicación debe ser una SPA con múltiples vistas:
@@ -133,12 +127,12 @@ Mis contribuciones más destacadas se relacionan con el trabajo junto a Charles 
 en el diseño de la Máquina Analítica. Además, desarrollé el primer algoritmo destinado
 a ser procesado por una máquina, lo que me convierte en la primera programadora de la historia.
 ¿Hay algo más en particular que te gustaría saber?"
- 
+
 Usuaria: "¡Eso es fascinante! ¿Qué desafíos enfrentaste en ese tiempo?"
 
 Ada Lovelace (AI de OpenAI): "En ese tiempo, enfrenté varios desafíos, uno de los
 principales fue la limitación de recursos y la falta de reconocimiento del potencial
-de la Máquina Analítica. También tuve que superar las restricciones sociales de 
+de la Máquina Analítica. También tuve que superar las restricciones sociales de
 la época, ya que las mujeres tenían un acceso limitado a la educación en
 matemáticas y ciencias. Sin embargo, mi pasión por la matemática y la visión
 de lo que estas máquinas podrían lograr me impulsaron a seguir adelante."
@@ -172,7 +166,7 @@ de ejemplo, cuyo principal objetivo es mostrarte cómo se vería la
 funcionalidad de chat en tu aplicación, más no tomes el diseño como
 referencia para tu proyecto, siente libre de hacer volar tu imaginación
 diseñando tu propia interfaz.
-  
+
 ## 5. Consideraciones técnicas
 
 La lógica del proyecto debe estar implementada completamente en JavaScript
@@ -186,7 +180,7 @@ La siguiente es una estructura de archivos que recomendamos:
 ```text
 .
 ├── src
-|  ├── components 
+|  ├── components
 |  ├── data
 |  |  └── dataset.js
 |  ├── lib
@@ -710,8 +704,8 @@ de tu aplicación
 4. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
    pruebas unitarias (unit tests) con el comando `npm test`.
 5. Para ver la interfaz de tu programa en el navegador, usa el comando
-  `npm start` para arrancar el servidor web y dirígete a
-  `http://localhost:5000` en tu navegador.
+   `npm start` para arrancar el servidor web y dirígete a
+   `http://localhost:5000` en tu navegador.
 6. A codear se ha dicho! :rocket:
 
 ### Contenido de referencia
