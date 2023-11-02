@@ -30,8 +30,8 @@ export const sortData = (data, sortBy, sortOrder) => {
   };
   
   
-  export const sortBounty = (data, sortOrder) => {
-    const sortedCharacters = data.sort((a, b) => {
+  export const sortBounty = (dataset, sortOrder) => {
+    const sortedCharacters = dataset.sort((a, b) => {
       //tomamos ambos parametros y le quitamos todo lo que no sea digitos y lo reemplazamos por un espacio vacio. El 10 es el segundo parametro de parseInt para indicar que es sistema decimal. (base 10)
       const bountyA = parseInt(a.facts.bounty.replace(/[^0-9]/g, ''), 10);
       const bountyB = parseInt(b.facts.bounty.replace(/[^0-9]/g, ''), 10);
