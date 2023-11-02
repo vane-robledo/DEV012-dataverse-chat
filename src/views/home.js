@@ -6,6 +6,7 @@ import { renderItems } from "../components/cards.js";
 import dataset from "../data/dataset.js";
 import { sortBounty } from "../lib/dataFunctions.js";
 import { sortData } from "../lib/dataFunctions.js";
+import { navigateTo } from "../router.js";
 
 export const renderHome = () => {
   const section = document.createElement("section");
@@ -15,7 +16,6 @@ export const renderHome = () => {
   const header = renderHeader();
   const showItems = document.createElement("div");
   showItems.classList.add("showItems");
-  const rootRender = document.querySelector("#root");
 
   nav.innerHTML += `
   <label for="menu">☰</label>
@@ -74,8 +74,8 @@ export const renderHome = () => {
 
   section.appendChild(header);
   section.appendChild(nav);
-  section.appendChild(showItems);
   showItems.appendChild(renderItems(dataset));
+  section.appendChild(showItems);
   window.addEventListener("DOMContentLoaded", function () {
     const filterOrigin = document.querySelector(
       '[data-testid="select-filterOrigin"]'
@@ -109,7 +109,7 @@ export const renderHome = () => {
       e.preventDefault();
       const value = filterCrew.value;
       const filteredCrew = filterData(dataset, "crewOrigin", value);
-      //rootRender.innerHTML = "";
+      showItems.innerHTML = "";
       filterOrigin.value = "";
       filterStatus.value = "";
       const filteredList = renderItems(filteredCrew);
@@ -120,7 +120,7 @@ export const renderHome = () => {
       e.preventDefault();
       const value = filterStatus.value;
       const filteredStatus = filterData(dataset, "status", value);
-      rootRender.innerHTML = "";
+      showItems.innerHTML = "";
       filterOrigin.value = "";
       filterCrew.value = "";
       const filteredList = renderItems(filteredStatus);
@@ -156,49 +156,12 @@ export const renderHome = () => {
       showItems.appendChild(renderItems(dataset));
       data = dataset;
     });
+    const factsButton = document.getElementById("facts");
+    factsButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigateTo("facts");
+    });
+    section.appendChild(footer);
   });
-  section.appendChild(footer);
   return section;
-};
-
-export const renderStats = () => {
-  const root = document.querySelector("#root");
-  const ul = document.createElement("ul");
-  //Render Origin Card
-  const liOrigin = document.createElement("li");
-  liOrigin.classList.add("cards");
-  liOrigin.innerHTML = `
-    <h3>Origin Fact</h3>
-  <img src= "${"https://cdn.myanimelist.net/s/common/uploaded_files/1447350221-41774e2d831c741252034f3e287dc61d.jpeg"}" alt="origin-img">
-  `;
-  const pOrigin = document.createElement("p");
-  pOrigin.id = "idOrigin";
-  liOrigin.appendChild(pOrigin);
-  ul.appendChild(liOrigin);
-
-  //Render Crew Card
-  const liCrew = document.createElement("li");
-  liCrew.classList.add("cards");
-  liCrew.innerHTML = `
-    <h3>Crew Fact</h3>
-  <img src= "${"https://i.pinimg.com/originals/ff/e8/e8/ffe8e84d96f9417fec86d2b84470a0b6.jpg"}" alt="crew-img">
-  `;
-  const pCrew = document.createElement("p");
-  pCrew.id = "idCrew";
-  liCrew.appendChild(pCrew);
-  ul.appendChild(liCrew);
-
-  //Render Bounty Card
-  const liBounty = document.createElement("li");
-  liBounty.classList.add("cards");
-  liBounty.innerHTML = `
-    <h3>Bounty Fact</h3>
-  <img src= "${"https://birdsofherme.files.wordpress.com/2021/08/sanji-bounty.jpg"}" alt="bounty-img">
-  `;
-  const pBounty = document.createElement("p");
-  pBounty.id = "idBounty";
-  liBounty.appendChild(pBounty);
-  ul.appendChild(liBounty);
-  root.appendChild(ul);
-  return ul;
 };
