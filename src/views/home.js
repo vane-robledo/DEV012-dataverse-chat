@@ -1,11 +1,11 @@
 import { renderNav } from "../components/nav.js";
 import { renderHeader } from "../components/header.js";
-import { renderFooter } from "../components/footer.js"
+import { renderFooter } from "../components/footer.js";
 import { filterData } from "../lib/dataFunctions.js";
 import { renderItems } from "../components/cards.js";
 import dataset from "../data/dataset.js";
 import { sortBounty } from "../lib/dataFunctions.js";
-
+import { sortData } from "../lib/dataFunctions.js";
 
 export const renderHome = () => {
   const section = document.createElement("section");
@@ -13,9 +13,9 @@ export const renderHome = () => {
   const nav = renderNav();
   const footer = renderFooter();
   const header = renderHeader();
-  const ul = renderItems();
+  const showItems = document.createElement("div");
+  showItems.classList.add("showItems");
   const rootRender = document.querySelector("#root");
-
 
   nav.innerHTML += `
   <label for="menu">☰</label>
@@ -70,30 +70,39 @@ export const renderHome = () => {
   </select>
   <button data-testid="button-clear">Clear</button>
   <button id="facts" class="button">Facts</button>
-  </div>`
-  
-    section.appendChild(header)
-    section.appendChild(nav);
-    section.appendChild(ul)
-  window.addEventListener('DOMContentLoaded', function () {
-    const filterOrigin = document.querySelector('[data-testid="select-filterOrigin"]');
+  </div>`;
+
+  section.appendChild(header);
+  section.appendChild(nav);
+  section.appendChild(showItems);
+  showItems.appendChild(renderItems(dataset));
+  window.addEventListener("DOMContentLoaded", function () {
+    const filterOrigin = document.querySelector(
+      '[data-testid="select-filterOrigin"]'
+    );
     const sortName = document.querySelector('[data-testid="select-sort"]');
-    const sortedBounty = document.querySelector('[data-testid="select-bounty"]');
+    const sortedBounty = document.querySelector(
+      '[data-testid="select-bounty"]'
+    );
     const filterCrew = document.querySelector('[data-testid="select-filter"]');
-    const filterStatus = document.querySelector('[data-testid="select-filterStatus"]');
+    const filterStatus = document.querySelector(
+      '[data-testid="select-filterStatus"]'
+    );
     const clearButton = document.querySelector('[data-testid="button-clear"]');
 
-
-
-    let result;
+    let data = dataset;
     filterOrigin.addEventListener("change", (e) => {
       e.preventDefault();
       const value = filterOrigin.value;
       const filteredOrigin = filterData(dataset, "seaOfOrigin", value);
+      console.log(filteredOrigin);
+      showItems.innerHTML = "";
       filterCrew.value = "";
       filterStatus.value = "";
-      section.appendChild(renderItems(filteredOrigin));
-      result = filteredOrigin;
+      const filteredList = renderItems(filteredOrigin);
+      console.log(filteredList);
+      showItems.appendChild(filteredList);
+      data = filteredOrigin;
     });
 
     filterCrew.addEventListener("change", (e) => {
@@ -104,8 +113,8 @@ export const renderHome = () => {
       filterOrigin.value = "";
       filterStatus.value = "";
       const filteredList = renderItems(filteredCrew);
-      rootRender.appendChild(filteredList);
-      result = filteredCrew;
+      showItems.appendChild(filteredList);
+      data = filteredCrew;
     });
     filterStatus.addEventListener("change", (e) => {
       e.preventDefault();
@@ -115,27 +124,26 @@ export const renderHome = () => {
       filterOrigin.value = "";
       filterCrew.value = "";
       const filteredList = renderItems(filteredStatus);
-      rootRender.appendChild(filteredList);
-      result = filteredStatus;
+      showItems.appendChild(filteredList);
+      data = filteredStatus;
     });
     sortName.addEventListener("change", (e) => {
       e.preventDefault();
       const sortOrder = sortName.value;
-      const sortedName = sortData(result, "name", sortOrder);
-      rootRender.innerHTML = "";
+      const sortedName = sortData(data, "name", sortOrder);
+      showItems.innerHTML = "";
       sortedBounty.value = "";
       const sortedList = renderItems(sortedName);
-      rootRender.appendChild(sortedList);
-    }
-    );
+      showItems.appendChild(sortedList);
+    });
     sortedBounty.addEventListener("change", (e) => {
       e.preventDefault();
       const sortOrder = sortedBounty.value;
-      const sortedResultBounty = sortBounty(result, sortOrder)
-      rootRender.innerHTML = "";
+      const sortedResultBounty = sortBounty(data, sortOrder);
+      showItems.innerHTML = "";
       sortName.value = "";
       const sortedList = renderItems(sortedResultBounty);
-      rootRender.appendChild(sortedList);
+      showItems.appendChild(sortedList);
     });
     clearButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -144,16 +152,14 @@ export const renderHome = () => {
       filterStatus.value = "";
       sortName.value = "";
       sortedBounty.value = "";
-      rootRender.innerHTML = "";
-      rootRender.appendChild(renderItems(dataset));
-      result = dataset;
+      showItems.innerHTML = "";
+      showItems.appendChild(renderItems(dataset));
+      data = dataset;
     });
-
-  })
-  section.appendChild(footer)
-  return section
-}
-
+  });
+  section.appendChild(footer);
+  return section;
+};
 
 export const renderStats = () => {
   const root = document.querySelector("#root");
@@ -164,13 +170,11 @@ export const renderStats = () => {
   liOrigin.innerHTML = `
     <h3>Origin Fact</h3>
   <img src= "${"https://cdn.myanimelist.net/s/common/uploaded_files/1447350221-41774e2d831c741252034f3e287dc61d.jpeg"}" alt="origin-img">
-  `
+  `;
   const pOrigin = document.createElement("p");
   pOrigin.id = "idOrigin";
   liOrigin.appendChild(pOrigin);
   ul.appendChild(liOrigin);
-
-
 
   //Render Crew Card
   const liCrew = document.createElement("li");
@@ -178,13 +182,11 @@ export const renderStats = () => {
   liCrew.innerHTML = `
     <h3>Crew Fact</h3>
   <img src= "${"https://i.pinimg.com/originals/ff/e8/e8/ffe8e84d96f9417fec86d2b84470a0b6.jpg"}" alt="crew-img">
-  `
+  `;
   const pCrew = document.createElement("p");
   pCrew.id = "idCrew";
   liCrew.appendChild(pCrew);
   ul.appendChild(liCrew);
-
-
 
   //Render Bounty Card
   const liBounty = document.createElement("li");
@@ -192,7 +194,7 @@ export const renderStats = () => {
   liBounty.innerHTML = `
     <h3>Bounty Fact</h3>
   <img src= "${"https://birdsofherme.files.wordpress.com/2021/08/sanji-bounty.jpg"}" alt="bounty-img">
-  `
+  `;
   const pBounty = document.createElement("p");
   pBounty.id = "idBounty";
   liBounty.appendChild(pBounty);
@@ -200,6 +202,3 @@ export const renderStats = () => {
   root.appendChild(ul);
   return ul;
 };
-
-
-
