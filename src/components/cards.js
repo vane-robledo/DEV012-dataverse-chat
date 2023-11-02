@@ -1,6 +1,6 @@
 import dataset from "../data/dataset.js";
 
-export const renderItems = (data) => {
+export const renderItems = (dataset) => {
     const ul = document.createElement("ul");
     dataset.forEach((element) => {
       const li = document.createElement("li");
