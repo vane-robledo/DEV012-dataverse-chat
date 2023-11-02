@@ -16,7 +16,6 @@ export const renderHome = () => {
   const header = renderHeader();
   const showItems = document.createElement("div");
   showItems.classList.add("showItems");
-  const rootRender = document.querySelector("#root");
 
   nav.innerHTML += `
   <label for="menu">☰</label>
@@ -75,8 +74,8 @@ export const renderHome = () => {
 
   section.appendChild(header);
   section.appendChild(nav);
-  section.appendChild(showItems);
   showItems.appendChild(renderItems(dataset));
+  section.appendChild(showItems);
   window.addEventListener("DOMContentLoaded", function () {
     const filterOrigin = document.querySelector(
       '[data-testid="select-filterOrigin"]'
@@ -160,11 +159,9 @@ export const renderHome = () => {
     const factsButton = document.getElementById("facts");
     factsButton.addEventListener("click", (e) => {
       e.preventDefault();
-      navigateTo("/facts")
-
+      navigateTo("facts");
+    });
+    section.appendChild(footer);
   });
-  section.appendChild(footer);
   return section;
-  
-})
-}
+};

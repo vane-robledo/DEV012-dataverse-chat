@@ -1,42 +1,35 @@
-let ROUTES= {};
+let ROUTES = {};
 
-let rootElement="";
+let rootElement = "";
 
-export const setRootElement=(newRootElementValue)=>{
- rootElement= newRootElementValue;
-
-}
-
-export const setRoutes=(newRoutesValue)=>{
-
-    ROUTES= newRoutesValue;
-
-}
-
-const renderView= (pathname, props={})=>{
-
-const root= rootElement;
-root.innerHTML= "";
-
-if(ROUTES[pathname]){
-    const template= ROUTES[pathname](props);
-    root.appendChild(template);
-}else{
-    root.appendChild(ROUTES[`/error`](props));
-}
+export const setRootElement = (newRootElementValue) => {
+  rootElement = newRootElementValue;
 };
 
-export const navigateTo = (pathname, props={})=>{
-const URLVisited= windowlocation.hostname+ pathname;
-history.pushState({}, "", URLVisited);
+export const setRoutes = (newRoutesValue) => {
+  ROUTES = newRoutesValue;
+};
 
-renderView(pathname, props);
+const renderView = (pathname, props = {}) => {
+  const root = rootElement;
+  root.innerHTML = "";
 
+  if (ROUTES[pathname]) {
+    const template = ROUTES[pathname](props);
+    root.appendChild(template);
+  } else {
+    root.appendChild(ROUTES[`error`](props));
+  }
+};
 
-}
+export const navigateTo = (pathname, props = {}) => {
+    console.log(window.location)
+  const URLVisited = window.location + pathname;
+  history.pushState({}, "", URLVisited);
 
+  renderView(pathname, props);
+};
 
-export const onURLChange = (location)=>{
-    renderView(location);
-
-}
+export const onURLChange = (location) => {
+  renderView(location);
+};
