@@ -1,9 +1,23 @@
 import dataset from "../data/dataset.js";
 import { computeStats, computeStatsBounty } from "../lib/dataFunctions.js";
+import { renderNav } from "../components/nav.js";// agregue
+import { renderFooter } from "../components/footer.js";//agregue
+import { renderHeader } from "../components/header.js";//agregue
+
 
 export const renderStats = () => {
+  const section= document.createElement("section")//agregue
+  const header = renderHeader()//agregue
+  const nav = renderNav();//agregue
+  const footer = renderFooter();//agregue
+
   const root = document.querySelector("#root");
   const ul = document.createElement("ul");
+  const titulo= document.createElement("h2");
+  titulo.innerHTML= "Facts";
+  titulo.classList.add("factsStyle");
+  nav.appendChild(titulo);
+
   //Render Origin Card
   const liOrigin = document.createElement("li");
   liOrigin.classList.add("cards");
@@ -60,5 +74,9 @@ export const renderStats = () => {
     computeStatsBounty(dataset, "bounty", 315000000) +
     "% of the characters have a bounty over 315,000,000.";
 
-  return ul;
+    section.appendChild(header);//agregue esto
+    section.appendChild(nav);
+    section.appendChild(ul);
+    section.appendChild(footer);
+  return section;
 };
