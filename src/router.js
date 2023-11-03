@@ -18,13 +18,13 @@ const renderView = (pathname, props = {}) => {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES[`error`](props));
+    root.appendChild(ROUTES[`/error`](props));
   }
 };
 
 export const navigateTo = (pathname, props = {}) => {
-    console.log(window.location)
-  const URLVisited = window.location + pathname;
+    
+  const URLVisited = window.location.origin + pathname;// uso de origin en lugar de hostname porque daba error.
   history.pushState({}, "", URLVisited);
 
   renderView(pathname, props);
