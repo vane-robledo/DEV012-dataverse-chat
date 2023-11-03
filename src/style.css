@@ -5,12 +5,13 @@
   padding: 0px;
   margin: 0px;
 }
-.headerStyle {
+header {
   font-family: "Metal Mania", cursive;
   font-style: normal;
+  line-height: n;
   width: 100%;
   height: 20vh;
-  background-image: url(../img/header-image.png);
+  background-image: url(./img/header-image.png);
   background-size: 506px 234px;
   background-color: #01367C;
   display: flex;
@@ -36,13 +37,16 @@ h1 {
 body {
   background-color: #EAEAEA;
 }
-.navStyle {
+nav {
   display: flex;
   width: 100%;
-  height: 20%;
-  background-color: #A90000;
+  background-color: #A90000;/* pase este color aqui*/
 }
-
+.factsStyle {
+  display: block;
+  margin: 0 auto; 
+  color: white;
+}
 .div-filtros {
   display: flex;
   flex-direction: row;
@@ -50,8 +54,7 @@ body {
 }
 .filters {
   width: 100%;
-  height: 20%;
-  background-color: #000000;
+  background-color: #A90000;
   display: flex;
 }
 label {
@@ -106,6 +109,7 @@ ul {
   align-items: center;
   background-color: #D1A879;
   width: 445px;
+  height: px;
   margin: 30px 55px;
   border-radius: 20px;
   justify-content: space-around;

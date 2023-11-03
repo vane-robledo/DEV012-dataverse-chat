@@ -7,7 +7,10 @@ import data from "./data/dataset.js";
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { error } from "./views/error.js";
 import { renderStats } from "./views/facts.js";
-const routes = { "/": renderHome, "facts": renderStats, "error": error };
+
+
+
+const routes = { "/": renderHome, "/facts": renderStats, "/error": error };
 const rootRender = document.querySelector("#root");
 setRoutes(routes);
 setRootElement(rootRender);

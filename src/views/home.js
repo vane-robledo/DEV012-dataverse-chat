@@ -159,7 +159,7 @@ export const renderHome = () => {
     const factsButton = document.getElementById("facts");
     factsButton.addEventListener("click", (e) => {
       e.preventDefault();
-      navigateTo("facts");
+      navigateTo("/facts");
     });
     section.appendChild(footer);
   });
