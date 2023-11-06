@@ -11,7 +11,7 @@ export const renderStats = () => {
   const nav = renderNav();//agregue
   const footer = renderFooter();//agregue
 
-  const root = document.querySelector("#root");
+
   const ul = document.createElement("ul");
   const titulo= document.createElement("h2");
   titulo.innerHTML= "Facts";
@@ -58,17 +58,17 @@ export const renderStats = () => {
 
   root.appendChild(ul);
 
-  const origen = document.querySelector("#idOrigin");
+  const origen = ul.querySelector("#idOrigin");
   origen.textContent =
     "Did you know that " +
     computeStats(dataset, "seaOfOrigin", "East Blue") +
     "% of the characters come from East Blue.";
-  const crew = document.querySelector("#idCrew");
+  const crew = ul.querySelector("#idCrew");
   crew.textContent =
     "Did you know that " +
     computeStats(dataset, "crewOrigin", "Straw Hat Pirates") +
     "% of the characters are from Luffy's crew (Straw Hat Pirates).";
-  const bounty = document.querySelector("#idBounty");
+  const bounty = ul.querySelector("#idBounty");
   bounty.textContent =
     "Did you know that " +
     computeStatsBounty(dataset, "bounty", 315000000) +
