@@ -1,4 +1,3 @@
-import dataset from "../data/dataset.js";
 import { navigateTo } from "../router.js";
 
 export const renderItems = (dataset) => {
