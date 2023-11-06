@@ -1,7 +1,7 @@
 import { navigateTo } from "../router.js";
 
 export const renderNav = () => {
-    
+  
   const homeIcon = document.createElement("button");
   homeIcon.id="button";
   
@@ -10,21 +10,11 @@ export const renderNav = () => {
   nav.classList.add("navStyle");
   nav.appendChild(homeIcon);  
 
-  window.addEventListener("DOMContentLoaded", function () {
-    const boton= document.querySelector("#button");
-
-
-  console.log(boton)
-
-
-  boton.addEventListener("click" ,(e) => {
-    e.preventDefault();
-
-    
-    navigateTo("/"  );
-
-  console.log("funciona")
+  homeIcon.addEventListener("click" ,(e) => {
+    e.preventDefault();    
+    navigateTo("/");
+ 
   })
-})
+
 return nav;
 }
