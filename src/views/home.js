@@ -76,19 +76,16 @@ export const renderHome = () => {
   section.appendChild(nav);
   showItems.appendChild(renderItems(dataset));
   section.appendChild(showItems);
-  window.addEventListener("DOMContentLoaded", function () {
-    const filterOrigin = document.querySelector(
-      '[data-testid="select-filterOrigin"]'
+  
+    const filterOrigin = nav.querySelector('[data-testid="select-filterOrigin"]'
     );
-    const sortName = document.querySelector('[data-testid="select-sort"]');
-    const sortedBounty = document.querySelector(
-      '[data-testid="select-bounty"]'
+    const sortName = nav.querySelector('[data-testid="select-sort"]');
+    const sortedBounty = nav.querySelector('[data-testid="select-bounty"]'
     );
-    const filterCrew = document.querySelector('[data-testid="select-filter"]');
-    const filterStatus = document.querySelector(
-      '[data-testid="select-filterStatus"]'
+    const filterCrew = nav.querySelector('[data-testid="select-filter"]');
+    const filterStatus = nav.querySelector('[data-testid="select-filterStatus"]'
     );
-    const clearButton = document.querySelector('[data-testid="button-clear"]');
+    
 
     let data = dataset;
     filterOrigin.addEventListener("change", (e) => {
@@ -145,6 +142,7 @@ export const renderHome = () => {
       const sortedList = renderItems(sortedResultBounty);
       showItems.appendChild(sortedList);
     });
+    const clearButton = nav.querySelector('[data-testid="button-clear"]');
     clearButton.addEventListener("click", (e) => {
       e.preventDefault();
       filterOrigin.value = "";
@@ -156,12 +154,12 @@ export const renderHome = () => {
       showItems.appendChild(renderItems(dataset));
       data = dataset;
     });
-    const factsButton = document.getElementById("facts");
+    const factsButton = nav.querySelector("#facts");
     factsButton.addEventListener("click", (e) => {
       e.preventDefault();
       navigateTo("/facts");
     });
     section.appendChild(footer);
-  });
+  
   return section;
 };
