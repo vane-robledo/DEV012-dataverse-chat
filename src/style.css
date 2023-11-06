@@ -70,7 +70,11 @@ select {
   height: 70%;
   margin-top: 8px;
 }
-.home-button {
+.homeButton {
+  background-color: transparent;
+  border: none;
+}
+.home-img{
   margin-top: 10px;
   width: 100%;
   height: 60%;
