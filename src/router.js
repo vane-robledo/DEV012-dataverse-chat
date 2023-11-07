@@ -24,7 +24,7 @@ const renderView = (pathname, props = {}) => {
 
 export const navigateTo = (pathname, props = {}) => {
     
-  const URLVisited = window.location.origin + pathname;// uso de origin en lugar de hostname porque daba error.
+  const URLVisited = window.location.origin + pathname;
   history.pushState({}, "", URLVisited);
 
   renderView(pathname, props);
