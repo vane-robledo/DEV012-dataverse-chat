@@ -40,7 +40,12 @@ body {
 nav {
   display: flex;
   width: 100%;
-  background-color: #A90000;/* pase este color aqui*/
+  background-color: #A90000;
+}
+.detallesStyle{
+  display: block; 
+  margin: 0 auto;
+
 }
 .factsStyle {
   display: block;
@@ -118,6 +123,20 @@ ul {
   border-radius: 20px;
   justify-content: space-around;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chat{
+  
+  width: 1500px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #D1A879;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  margin: 30px 55px;
+  padding: 5rem;
+
+
 }
 
 img {
