@@ -6,7 +6,7 @@ export const renderNav = () => {
   homeIcon.id="button";
   homeIcon.classList.add("homeButton")
   
-  homeIcon.innerHTML = `<img class= "home-img" src= "${"./img/home-button.png"}" alt="crew-img">`    
+  homeIcon.innerHTML = `<img class= "home-img" src="./img/home-button.png" alt="crew-img">`    
   const nav = document.createElement("nav");
   nav.classList.add("navStyle");
   nav.appendChild(homeIcon);  
