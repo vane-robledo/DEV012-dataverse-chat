@@ -3,14 +3,15 @@
 export const renderChat = () => {
 
 
-const contenedor= document.createElement("div");
+const contenedor = document.createElement("div");
+contenedor.id = "chatContainer"
 
 
 contenedor.innerHTML+= `
-<form>
-    <input type="text" placeholder="Chatea con tu personaje favorita"></input>
-    <button type= "button" id="sendButton"></button>
-</form>
+
+    <textarea id="inputChat" type="text" placeholder="Chatea con tu personaje favorita" rows="10" col = "100"></textarea>
+    <button type= "button" id="sendButton">Enviar</button>
+
 `
 
 return contenedor;
