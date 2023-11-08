@@ -14,14 +14,13 @@ export const renderH = (informacion) => {
   section2.classList.add("chat");
   section2.innerHTML+=`<section>
   <div>
-  <h3 itemprop="name">${informacion.name}</h3>
-  <img src="${informacion.imageUrl}">
-  <h4>${informacion.shortDescription}"</h4>
-  <h4>${informacion.description}"</h4>
-  <h4>${informacion.facts.status}"</h4>
-  <h4>${informacion.facts.seaOfOrigin}"</h4>
-  <h4>${informacion.facts.crewOrigin}"</h4>
-  <h4>${informacion.facts.bounty}</h4>
+  <img class ="img-chat" src="${informacion.imageUrl}">
+  <h4 class = "infoChatName" itemprop="name">${informacion.name}</h3>
+  <h4 class = "infoChat"> "${informacion.description}"</h4>
+  <h4 class = "infoChat">Status: ${informacion.facts.status}</h4>
+  <h4 class = "infoChat">Origin: ${informacion.facts.seaOfOrigin}</h4>
+  <h4 class = "infoChat">Crew: ${informacion.facts.crewOrigin}</h4>
+  <h4 class = "infoChat">Bounty: ${informacion.facts.bounty}</h4>
   </div>
   </section>` 
   
