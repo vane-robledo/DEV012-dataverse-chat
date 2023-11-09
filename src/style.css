@@ -51,15 +51,21 @@ nav {
 }
 
 .detallesStyle {
-  display: block;
-  margin: 0 auto;
-
+  font-family: "Metal Mania", cursive;
+  font-weight: 200;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  margin-left: 31%;
 }
 
 .factsStyle {
   display: block;
   margin: 0 auto;
   color: white;
+  font-family: "Metal Mania", cursive;
+  font-weight: 200;
+  font-size: 40px;
 }
 
 .div-filtros {
@@ -128,9 +134,15 @@ button[data-testid="button-clear"] {
   margin-left: 35% ;
 }
 
+
+#everyoneButton{
+  width: 15%;
+  margin-left: 20%;
+}
+
 #inputChat {
   margin-top: 90px;
-  width: 400%;
+  width: 250%;
   height: 50%;
 }
 
@@ -143,15 +155,6 @@ button[data-testid="button-clear"] {
 
 .bi-send {
 size: 100px;
-}
-
-h2 {
-  font-family: "Metal Mania", cursive;
-  font-weight: 200;
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-  margin: 10px;
 }
 
 ul {
@@ -186,6 +189,11 @@ ul {
   margin-bottom: 1%;
   margin-left: 15%;
   padding: 20px
+}
+
+.chatStyle{
+  margin-left: 10%;
+
 }
 
 #chatContainer {
