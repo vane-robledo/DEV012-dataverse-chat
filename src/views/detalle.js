@@ -2,6 +2,7 @@ import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "./chat.js";
+import { navigateTo } from "../router.js";
 
 
 export const renderH = (informacion) => {
@@ -12,7 +13,7 @@ export const renderH = (informacion) => {
   const section= document.createElement("section");
   const section2= document.createElement("section");
   section2.classList.add("chat");
-  section2.innerHTML+=`<section>
+  section2.innerHTML+=`
   <div>
   <img class ="img-chat" src="${informacion.imageUrl}">
   <h4 class = "infoChatName" itemprop="name">${informacion.name}</h3>
@@ -21,13 +22,21 @@ export const renderH = (informacion) => {
   <h4 class = "infoChat">Origin: ${informacion.facts.seaOfOrigin}</h4>
   <h4 class = "infoChat">Crew: ${informacion.facts.crewOrigin}</h4>
   <h4 class = "infoChat">Bounty: ${informacion.facts.bounty}</h4>
-  </div>
-  </section>` 
+  </div>` 
   
   const titulo = document.createElement("h2");
   titulo.innerHTML =  `CHAT WITH ${informacion.name}`;
   titulo.classList.add("detallesStyle");   
-  nav.appendChild(titulo);     
+  nav.appendChild(titulo); 
+  nav.innerHTML+= `<button type ="button" id= "everyoneButton" class= "button"> Chat With Everyone </button>`; 
+  
+  const everyoneButton = nav.querySelector("#everyoneButton");
+  
+  everyoneButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    navigateTo("/chatEveryone");
+  });
   
   section.appendChild(header);
   section.appendChild(nav); 
