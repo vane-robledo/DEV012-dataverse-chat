@@ -2,7 +2,7 @@ import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "./chat.js";
-import { navigateTo } from "../router.js";
+//import { navigateTo } from "../router.js";
 
 
 export const renderH = (informacion) => {
@@ -24,19 +24,10 @@ export const renderH = (informacion) => {
   <h4 class = "infoChat">Bounty: ${informacion.facts.bounty}</h4>
   </div>` 
   
-  const titulo = document.createElement("h2");
-  titulo.innerHTML =  `CHAT WITH ${informacion.name}`;
-  titulo.classList.add("detallesStyle");   
-  nav.appendChild(titulo); 
-  nav.innerHTML+= `<button type ="button" id= "everyoneButton" class= "button"> Chat With Everyone </button>`; 
-  
+  const titulo = nav.querySelector("#titulo");
+  titulo.style.display = "block";
   const everyoneButton = nav.querySelector("#everyoneButton");
-  
-  everyoneButton.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    navigateTo("/chatEveryone");
-  });
+  everyoneButton.style.display = "block";
   
   section.appendChild(header);
   section.appendChild(nav); 

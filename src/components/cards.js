@@ -15,7 +15,7 @@ export const renderItems = (dataset) => {
       `;
       li.addEventListener("click", (e) => {
         e.preventDefault();
-        navigateTo(`/detalle/${element.id}`, element);
+        navigateTo(`/detalle-${element.id}`, element);
       })
       ul.appendChild(li);
       
