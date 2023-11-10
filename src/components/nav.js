@@ -21,9 +21,9 @@ export const renderNav = () => {
   
   
   const titulo = document.createElement("h2");
-  dataset.forEach((element) => {
-    titulo.innerHTML =  `CHAT WITH ${element.name}`;
-  })
+  // dataset.forEach((element) => {
+  //   titulo.innerHTML =  `CHAT WITH ${element.name}`;
+  // })
   
   titulo.id = "titulo";
   titulo.style.display = "none";
