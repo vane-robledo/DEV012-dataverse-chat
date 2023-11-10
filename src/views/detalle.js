@@ -26,6 +26,7 @@ export const renderH = (informacion) => {
   
   const titulo = nav.querySelector("#titulo");
   titulo.style.display = "block";
+  titulo.innerHTML =  `CHAT WITH ${informacion.name}`;
   const everyoneButton = nav.querySelector("#everyoneButton");
   everyoneButton.style.display = "block";
   
