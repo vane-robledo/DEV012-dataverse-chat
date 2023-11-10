@@ -12,12 +12,12 @@ import dataset from "./data/dataset.js";
 const routes = { "/": renderHome,
  "/facts": renderStats,
  "/error": error,
- "/chatEveryone": renderEveryone
+ "/chatEveryone": renderEveryone,
 
 };
 // investigar como hacer la url dinamica 
 dataset.forEach((element) => {
-  routes[`/detalle/${element.id}`] = renderH;
+  routes[`/detalle-${element.id}`] = renderH;
 });
 
 const rootRender = document.querySelector("#root");
