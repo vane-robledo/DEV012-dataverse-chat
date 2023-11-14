@@ -149,16 +149,14 @@ button[data-testid="button-clear"] {
 }
 
 #inputChat {
-  margin-top: 90px;
-  width: 300%;
-  height: 10%;
+  width: 100%;
+
 }
 
 #sendButton {
   background-color: white;
   font-size: 30px;
   padding: 5px;
-  margin-top:5px;
 }
 
 .bi-send {
@@ -199,19 +197,28 @@ ul {
   padding: 20px
 }
 
+.infoAndImg{
+  max-width: 35%;
+}
 .chatStyle{
   margin-left: 10%;
 
 }
 
 #chatContainer {
-  margin-top: 5px;
+  width: 65%;
+  height: 16%;
+  margin-left: 8%;
+  
+}
+#chatSection{
+  background-color: #fffefe;
 }
 
 .img-chat {
   width: 250px;
   height: 346px;
-  margin-left: 23%;
+  margin-left: 15%;
   margin-top: 9%;
 
 }
@@ -244,7 +251,7 @@ h3 {
   padding-top: 15px;
 }
 
-p {
+.description {
   width: 270px;
   font-family: "Rubik Mono One", regular;
   text-align: center;
