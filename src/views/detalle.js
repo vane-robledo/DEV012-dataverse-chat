@@ -5,8 +5,9 @@ import { renderChat } from "./chat.js";
 //import { navigateTo } from "../router.js";
 
 
+
 export const renderH = (informacion) => {
-  const chat= renderChat();
+  const chat= renderChat(informacion);
   const header = renderHeader()
   const nav = renderNav();
   const footer = renderFooter();
@@ -14,7 +15,7 @@ export const renderH = (informacion) => {
   const section2= document.createElement("section");
   section2.classList.add("chat");
   section2.innerHTML+=`
-  <div>
+  <div class = "infoAndImg">
   <img class ="img-chat" src="${informacion.imageUrl}">
   <h4 class = "infoChatName" itemprop="name">${informacion.name}</h3>
   <h4 class = "infoChat"> "${informacion.description}"</h4>
@@ -23,6 +24,7 @@ export const renderH = (informacion) => {
   <h4 class = "infoChat">Crew: ${informacion.facts.crewOrigin}</h4>
   <h4 class = "infoChat">Bounty: ${informacion.facts.bounty}</h4>
   </div>` 
+  
   
   const titulo = nav.querySelector("#titulo");
   titulo.style.display = "block";
