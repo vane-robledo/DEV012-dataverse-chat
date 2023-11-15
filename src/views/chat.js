@@ -1,4 +1,4 @@
-//import { openIAapi } from "../lib/chatApi.js";
+import { openIAapi } from "../lib/chatApi.js";
 //import { data } from "../lib/chatApi.js";
 
 export const renderChat = (informacion) => {
@@ -25,33 +25,8 @@ export const renderChat = (informacion) => {
     chatSection.appendChild(mostrarPregunta);
      
     
-    //const apiKey = 
-    const endpoint = "https://api.openai.com/v1/chat/completions";
-
-    const data = {
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "system",
-          content: `Eres ${informacion.name} un personaje de one piece por lo tanto responde a todas las preguntas que puedas sobre tu  vida `,
-        
-        },
-        { role: "user", content: textoUsuario }
-      ],
-    };
-
-    function openIAapi() {
-      const result = fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify(data),
-      });
-      return result;
-    }
-
+   
+    
    
 
     let borrarTextarea = contenedor.querySelector("#inputChat");
@@ -80,11 +55,11 @@ export const renderChat = (informacion) => {
         contenedor.appendChild(respuestaApiError);
       });
   });
-
-  
+// movi de posicion el chatSection
+  contenedor.appendChild(chatSection)
   contenedor.appendChild(inputChat);
   contenedor.appendChild(sendButton);
-  contenedor.appendChild(chatSection);
+  ;
 
   return contenedor;
 };

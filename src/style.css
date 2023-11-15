@@ -204,15 +204,21 @@ ul {
   margin-left: 10%;
 
 }
-
+/* agregue margin top */
 #chatContainer {
   width: 65%;
   height: 16%;
   margin-left: 8%;
   
+  /* margin-top: 400px; */
+  
 }
+/* agregue scroll y altura */
 #chatSection{
   background-color: #fffefe;
+  overflow-y: scroll;
+  height: 400px;
+
 }
 
 .img-chat {
