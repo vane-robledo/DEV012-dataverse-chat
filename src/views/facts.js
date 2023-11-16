@@ -10,8 +10,11 @@ export const renderStats = () => {
   const header = renderHeader()//agregue
   const nav = renderNav();//agregue
   const footer = renderFooter();//agregue
-
-
+  
+  const divFiltro= nav.querySelector(".div-filtros");
+  divFiltro.style.display="none";
+  const everyoneButton= nav.querySelector("#everyoneButton");
+  everyoneButton.style.display= "none";
   const ul = document.createElement("ul");
   const titulo= document.createElement("h2");
   titulo.innerHTML= "Facts";

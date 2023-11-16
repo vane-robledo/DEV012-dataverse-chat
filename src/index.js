@@ -12,7 +12,7 @@ import dataset from "./data/dataset.js";
 const routes = { "/": renderHome,
  "/facts": renderStats,
  "/error": error,
- "/chatEveryone": renderEveryone,
+ "/panel": renderEveryone,
 
 };
 // investigar como hacer la url dinamica 
