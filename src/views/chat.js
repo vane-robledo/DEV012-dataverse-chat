@@ -31,8 +31,8 @@ export const renderChat = (informacion) => {
 
     let borrarTextarea = contenedor.querySelector("#inputChat");
     borrarTextarea.value = "";
-
-    openIAapi()
+// aqui coloque el informacion.name
+    openIAapi(informacion.name, textoUsuario)
       .then((response) => response.json())
 
       .then((data) => {

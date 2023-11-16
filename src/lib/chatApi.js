@@ -1,7 +1,7 @@
 //import dataset from "../data/dataset.js";
 
 
-//const apiKey = 
+//export const apiKey = 
 const endpoint = "https://api.openai.com/v1/chat/completions";
 
 
