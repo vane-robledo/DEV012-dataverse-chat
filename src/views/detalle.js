@@ -2,6 +2,7 @@ import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "./chat.js";
+import { filterData } from "../lib/dataFunctions.js";
 //import { navigateTo } from "../router.js";
 
 
@@ -25,12 +26,14 @@ export const renderH = (informacion) => {
   <h4 class = "infoChat">Bounty: ${informacion.facts.bounty}</h4>
   </div>` 
   
-  
+  const divFiltro= nav.querySelector(".div-filtros");
+  divFiltro.style.display="none";
+  const everyoneButton= nav.querySelector("#everyoneButton");
+  everyoneButton.style.display= "none";
   const titulo = nav.querySelector("#titulo");
   titulo.style.display = "block";
   titulo.innerHTML =  `CHAT WITH ${informacion.name}`;
-  const everyoneButton = nav.querySelector("#everyoneButton");
-  everyoneButton.style.display = "block";
+  
   
   section.appendChild(header);
   section.appendChild(nav); 

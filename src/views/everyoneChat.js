@@ -18,6 +18,10 @@ export const renderEveryone = () => {
     <h4 class = "infoChatName" itemprop="name">ALL CHARACTERS</h3>
     </div>`
 
+    const everyoneButton= nav.querySelector("#everyoneButton");
+    everyoneButton.style.display= "none";
+    const divFiltro= nav.querySelector(".div-filtros");
+    divFiltro.style.display="none";
     const titulo = document.createElement("h2");
     titulo.innerHTML =  `CHAT WITH EVERYONE`;
     titulo.classList.add("detallesStyle");   
