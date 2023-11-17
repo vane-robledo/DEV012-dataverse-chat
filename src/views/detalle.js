@@ -3,8 +3,8 @@ import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "./chat.js";
 import { filterData } from "../lib/dataFunctions.js";
+import dataset from "../data/dataset.js";
 //import { navigateTo } from "../router.js";
-
 
 
 export const renderH = (informacion) => {
@@ -33,7 +33,6 @@ export const renderH = (informacion) => {
   const titulo = nav.querySelector("#titulo");
   titulo.style.display = "block";
   titulo.innerHTML =  `CHAT WITH ${informacion.name}`;
-  
   
   section.appendChild(header);
   section.appendChild(nav); 
