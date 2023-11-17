@@ -2,6 +2,9 @@ import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "./chat.js";
+import dataset from "../data/dataset.js";
+
+//const personajes = dataset.map(element => element.name);
 
 export const renderEveryone = () => {
     const header = renderHeader();
@@ -24,8 +27,14 @@ export const renderEveryone = () => {
     divFiltro.style.display="none";
     const titulo = document.createElement("h2");
     titulo.innerHTML =  `CHAT WITH EVERYONE`;
-    titulo.classList.add("detallesStyle");   
+    titulo.classList.add("detallesStyle"); 
+    // const tittle = document.createElement("h2");
+    // const personajes = `${dataset.id}`;
+    // console.log(personajes)
+    // tittle.innerHTML = `Chat with ${dataset.name}`;
+    // tittle.style.display = "none";  
     nav.appendChild(titulo); 
+    //nav.appendChild(tittle);
     section.appendChild(header);
     section.appendChild(nav);
     section2.appendChild(chat)
