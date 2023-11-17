@@ -1,7 +1,9 @@
+import dataset from "../data/dataset.js";
 import { openIAapi } from "../lib/chatApi.js";
+import { personajes } from "../lib/chatApi.js";
 //import { data } from "../lib/chatApi.js";
 
-export const renderChat = (informacion) => {
+export const renderChat = () => {
   const contenedor = document.createElement("div");
   contenedor.id = "chatContainer";
   const chatSection = document.createElement("section");
@@ -32,7 +34,7 @@ export const renderChat = (informacion) => {
     let borrarTextarea = contenedor.querySelector("#inputChat");
     borrarTextarea.value = "";
 // aqui coloque el informacion.name
-    openIAapi(informacion.name, textoUsuario)
+    openIAapi(personajes, textoUsuario)
       .then((response) => response.json())
 
       .then((data) => {
