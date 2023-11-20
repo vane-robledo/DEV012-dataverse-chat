@@ -6,6 +6,7 @@ import { error } from "./views/error.js";
 import { renderStats } from "./views/facts.js";
 import { renderH } from "./views/detalle.js";
 import { renderEveryone } from "./views/everyoneChat.js";
+import { renderApiKey } from "./apiKey.js";
 import dataset from "./data/dataset.js";
 
 
@@ -13,6 +14,7 @@ const routes = { "/": renderHome,
  "/facts": renderStats,
  "/error": error,
  "/panel": renderEveryone,
+ "/api-key": renderApiKey,
 
 };
 // investigar como hacer la url dinamica 

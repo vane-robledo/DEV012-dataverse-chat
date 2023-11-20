@@ -76,23 +76,26 @@ export const renderNav = () => {
   nav.appendChild(titulo); 
 
   const apiKeyInput= nav.querySelector("#apiKey");
-  apiKeyInput.addEventListener("click", (e) => {;
+  apiKeyInput.addEventListener("click", (e) => {
+
+    e.preventDefault();
+    navigateTo("/api-key");
   
-  const usuario= prompt("Ingrese su apiKey");
+  // const usuario= prompt("Ingrese su apiKey");
 
-  const guardarUsuario= usuario;
+  // const guardarUsuario= usuario;
 
-  if(guardarUsuario===apiKey){
+  // if(guardarUsuario===apiKey){
 
-   alert("Api Key correcta, puedes chatear con todos los personajes")
+  //  alert("Api Key correcta, puedes chatear con todos los personajes")
 
-  }else{
+  // }else{
 
 
-    alert("Api Key incorrecto, por favor colocar el api key correcto.")
-  }
+  //   alert("Api Key incorrecto, por favor colocar el api key correcto.")
+  // }
   
-  console.log(guardarUsuario);
+  // console.log(guardarUsuario);
   })
   const everyoneButton = nav.querySelector("#everyoneButton");
 
