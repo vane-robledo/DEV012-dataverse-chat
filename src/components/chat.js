@@ -1,4 +1,4 @@
-import dataset from "../data/dataset.js";
+//import dataset from "../data/dataset.js";
 import { openIAapi } from "../lib/chatApi.js";
 import { personajes } from "../lib/chatApi.js";
 //import { data } from "../lib/chatApi.js";

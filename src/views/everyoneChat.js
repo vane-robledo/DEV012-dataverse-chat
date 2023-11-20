@@ -1,7 +1,7 @@
 import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
-import { renderChat } from "./chat.js";
+import { renderChat } from "../components/chat.js";
 import dataset from "../data/dataset.js";
 
 //const personajes = dataset.map(element => element.name);
