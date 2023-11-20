@@ -10,12 +10,12 @@ export const renderItems = (dataset) => {
       li.innerHTML = `
       <h3 itemprop="name">${element.name}</h3>
       <img src="${element.imageUrl}" alt="${element.id}">
-      <p itemprop="description">${element.description}</p>
-      <h4 itemprop="bounty">${element.facts.bounty} </h4>
+      <p class="description" itemprop="description">${element.description}</p>
+      <h4 class = "bountyValue" itemprop="bounty">${element.facts.bounty}</h4>
       `;
       li.addEventListener("click", (e) => {
         e.preventDefault();
-        navigateTo(`/detalle/${element.id}`);
+        navigateTo(`/detalle-${element.id}`, element);
       })
       ul.appendChild(li);
       
