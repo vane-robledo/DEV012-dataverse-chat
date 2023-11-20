@@ -9,6 +9,7 @@ export const renderStats = () => {
   const section= document.createElement("section")//agregue
   const header = renderHeader()//agregue
   const nav = renderNav();//agregue
+  nav.style.width = "100%";
   const footer = renderFooter();//agregue
   
   const divFiltro= nav.querySelector(".div-filtros");

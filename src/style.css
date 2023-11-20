@@ -156,6 +156,16 @@ button[data-testid="button-clear"] {
 size: 100px;
 }
 
+.apiContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+#inputApiKey{
+  width: 400px;
+}
+
 ul {
   display: flex;
   flex-direction: row;

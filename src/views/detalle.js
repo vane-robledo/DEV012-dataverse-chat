@@ -1,7 +1,7 @@
 import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
-import { renderChat } from "./chat.js";
+import { renderChat } from "../components/chat.js";
 import { filterData } from "../lib/dataFunctions.js";
 import dataset from "../data/dataset.js";
 //import { navigateTo } from "../router.js";
@@ -11,6 +11,7 @@ export const renderH = (informacion) => {
   const chat= renderChat(informacion);
   const header = renderHeader()
   const nav = renderNav();
+  nav.style.width = "100%";
   const footer = renderFooter();
   const section= document.createElement("section");
   const section2= document.createElement("section");

@@ -1,7 +1,7 @@
 import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
-import { renderChat } from "./chat.js";
+import { renderChat } from "../components/chat.js";
 import dataset from "../data/dataset.js";
 
 //const personajes = dataset.map(element => element.name);
@@ -9,6 +9,7 @@ import dataset from "../data/dataset.js";
 export const renderEveryone = () => {
     const header = renderHeader();
     const nav = renderNav();
+    nav.style.width = "100%";
     const footer = renderFooter();
     const section = document.createElement("section");
     const section2= document.createElement("section");
