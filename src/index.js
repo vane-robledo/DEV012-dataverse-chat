@@ -1,6 +1,5 @@
 
 import { renderHome } from "./views/home.js";
-
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { error } from "./views/error.js";
 import { renderStats } from "./views/facts.js";
