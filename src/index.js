@@ -1,4 +1,3 @@
-
 import { renderHome } from "./views/home.js";
 
 import { onURLChange, setRootElement, setRoutes } from "./router.js";

@@ -69,3 +69,4 @@ export const renderChat = (element) => {
 
   return container;
 };
+
