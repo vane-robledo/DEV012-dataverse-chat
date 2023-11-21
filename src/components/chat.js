@@ -1,95 +1,71 @@
-import dataset from "../data/dataset.js";
 import { openIAapi, openIAapiIndividual } from "../lib/chatApi.js";
-import { personajes } from "../lib/chatApi.js";
-//import { data } from "../lib/chatApi.js";
+import { characters } from "../lib/chatApi.js";
 
-export const renderChat = (informacion) => {
-  const contenedor = document.createElement("div");
-  contenedor.id = "chatContainer";
+
+export const renderChat = (element) => {
+  const container = document.createElement("div");
+  container.id = "chatContainer";
   const chatSection = document.createElement("section");
   chatSection.id = "chatSection";
-
+  const divTextarea= document.createElement("div");
+  divTextarea.classList.add("divTextarea")
   let inputChat = document.createElement("textarea");
   inputChat.id = "inputChat";
-  inputChat.placeholder = "Chatea con tu personaje favorito";
+  inputChat.placeholder = "Chat with your favourite character";
   let sendButton = document.createElement("button");
   sendButton.id = "sendButton";
   sendButton.innerHTML = `<i class="bi bi-send"></i>`;
 
   sendButton.addEventListener("click", (e) => {
     
-    let textoUsuario = contenedor.querySelector("#inputChat").value;
-    let mostrarPregunta = document.createElement("p");
+    let userText = container.querySelector("#inputChat").value;
+    let showUserText = document.createElement("p");
     
-    console.log(textoUsuario)
-    mostrarPregunta.innerHTML = textoUsuario;
-    mostrarPregunta.style.color = "blue"
-    chatSection.appendChild(mostrarPregunta);
+    
+    showUserText.innerHTML = userText;
+    showUserText.style.color = "blue"
+    chatSection.appendChild(showUserText);
      
-    
-   
-    
-   
-
-    let borrarTextarea = contenedor.querySelector("#inputChat");
-    borrarTextarea.value = "";
-    const ruta = window.location.pathname;
-    console.log(ruta);
-    if(ruta === "/panel"){
-
-// aqui coloque el informacion.name
-    openIAapi(personajes, textoUsuario)
+    let clearTextarea = container.querySelector("#inputChat");    
+    clearTextarea.value = "";
+    const route = window.location.pathname;    
+    if(route === "/panel"){
+    openIAapi(characters, userText)
       .then((response) => response.json())
 
-      .then((data) => {
-        // Mostrar la respuesta en el contenedor
-
-        let respuestaApi = document.createElement("p");
-
-        respuestaApi.innerHTML = data.choices[0].message.content;
-
-        chatSection.appendChild(respuestaApi);
+      .then((data) => { 
+        let apiAnswer = document.createElement("p");
+        apiAnswer.innerHTML = data.choices[0].message.content;
+        chatSection.appendChild(apiAnswer);
       })
 
       .catch((error) => {
         console.error("Error en la solicitud:", error);
-
-        let respuestaApiError = document.createElement("p");
-
-        respuestaApiError.innerHTML = "Error de la solicitud";
-
-        contenedor.appendChild(respuestaApiError);
+        let apiError = document.createElement("p");
+        apiError.innerHTML = "Error de la solicitud";
+        container.appendChild(apiError);
       }) 
     } else{
-        openIAapiIndividual(informacion.name, textoUsuario)
+      openIAapiIndividual(element.name, userText)
       .then((response) => response.json())
-
       .then((data) => {
-        // Mostrar la respuesta en el contenedor
-
-        let respuestaApi = document.createElement("p");
-
-        respuestaApi.innerHTML = data.choices[0].message.content;
-
-        chatSection.appendChild(respuestaApi);
+        let apiAnswer = document.createElement("p");
+        apiAnswer.innerHTML = data.choices[0].message.content;
+        chatSection.appendChild(apiAnswer);
       })
 
       .catch((error) => {
-        console.error("Error en la solicitud:", error);
-
-        let respuestaApiError = document.createElement("p");
-
-        respuestaApiError.innerHTML = "Error de la solicitud";
-
-        contenedor.appendChild(respuestaApiError);
+        console.error("Error en la solicitud:", error);        
+        let apiError = document.createElement("p");
+        apiError.innerHTML = "Error de la solicitud";
+        container.appendChild(apiError);
       }) 
     }
   });
-// movi de posicion el chatSection
-  contenedor.appendChild(chatSection)
-  contenedor.appendChild(inputChat);
-  contenedor.appendChild(sendButton);
-  ;
+  container.appendChild(chatSection);
+  divTextarea.appendChild(inputChat);
+  divTextarea.appendChild(sendButton);
+  container.appendChild(divTextarea); 
 
-  return contenedor;
+  return container;
 };

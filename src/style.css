@@ -207,7 +207,7 @@ ul {
   margin-left: 10%;
 
 }
-/* agregue margin top */
+
 #chatContainer {
   width: 65%;
   height: 16%;
@@ -287,124 +287,337 @@ footer {
 }
 
 
-@media (max-width: 425px) {
-  header {
-    font-family: "Metal Mania", cursive;
-    width: 100%;
-    height: 22vh;
-    background-image: url(./img/header-image.png);
-    background-size: 420px 180px;
-    background-color: #01367C;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-  }
+@media (max-width: 430px) { 
+ 
+   
+header {
+  font-family: "Metal Mania", cursive;
+  font-style: normal;
+  width: 100%;
+  height: 20vh;
+  background-image: url(./img/header-image.png);
+  background-size: 420px 180px;
+  background-color: #01367C;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
 
-  nav {
-    display: flex;
-    flex-direction: wrap;
-    width: 100%;
-    height: 50px;
-  }
 
-  div {
-    display: none;
-  }
+.title {
+  width: 250px;
+  height: 101px;
+  background-color: #DA9A05;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+}
 
-  input[type="checkbox"] {
-    display: none;
-  }
+body {
+  background-color: #EAEAEA;
+}
 
-  input:checked~div {
-    display: block;
-    width: 100%;
-    height: 450px;
-    background-color: rgba(1, 54, 124, 0.9);
-    margin-left: 39px;
-    padding: 10px;
-    position: relative;
-  }
+nav {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #A90000;
+}
 
-  label[for="menu"] {
-    display: inline-block;
-    border: 1px;
-    border-radius: 5px;
-    width: 30px;
-    height: 10px;
-    margin-top: 12px;
-    line-height: 30px;
-    color: #EAEAEA;
-    font-size: 40px;
-  }
+input[type="checkbox"] {
+  display: none;
+}
 
-  select {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 8%;
-  }
+input:checked~.div-filtros {
+  display: block;
+  width: 100%;
+  height: 450px;
+  background-color: rgba(1, 54, 124, 0.9);
+  margin-left: 39px;
+  padding: 10px;
+  position: relative;
+}
 
-  label {
-    color: #EAEAEA;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
-  }
+label[for="menu"] {
+  display: inline-block;
+  border: 1px;
+  border-radius: 5px;
+  width: 30px;
+  height: 10px;
+  margin-top: 12px;
+  line-height: 30px;
+  color: #EAEAEA;
+  font-size: 40px;
+}
 
-  .title {
-    width: 257px;
-    height: 101px;
-    background-color: #DA9A05;
-    font-size: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-  }
+select {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 8%;
+}
 
-  button[data-testid="button-clear"],
-  .button {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 8%;
-    margin-left: 0px;
-    margin-top: 15px;
-    font-size: 20px;
-  }
+label {
+  color: #EAEAEA;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+.detallesStyle {
+  font-family: "Metal Mania", cursive;
+  font-weight: 200px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;  
+  margin-left: 15px;
+  margin-top: 5px;
+  
+}
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.factsStyle {
+  display: block;
+  margin: 0 auto;
+  color: white;
+  font-family: "Metal Mania", cursive;
+  font-weight: 200px;
+  font-size: 40px;
+}
 
-  .cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #D1A879;
-    width: 310px;
-    height: 390px;
-    margin: 10px;
-  }
+.div-filtros {
+  display: none;
+  flex-direction: row;
+  width: 70%;
+}
 
-  h3 {
-    text-align: center;
-  }
+.filters {
+  width: 100%;
+  background-color: #A90000;
+  display: flex;
+}
 
-  img {
-    width: 150px;
-    height: 200px;
-    padding: auto;
-  }
+label {
+  font-family: "Metal Mania", cursive;
+  font-size: 20px;
+  width: fit-content;
+  margin-top: 12px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
 
-  p {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 12px;
-  }
+select {
+  width: 10%;
+  height: 70%;
+  margin-top: 8px;
+}
 
-  h4 {
-    font-size: 12px;
-  }
+.homeButton {
+  background-color: transparent;
+  border: none;
+}
+
+.home-img {
+  width: 100%;
+  height: 60%;
+}
+
+button[data-testid="button-clear"] {
+  font-family: "Metal Mania", cursive;
+  font-size: 20px;
+  width: 10%;
+  height: 70%;
+  margin: 8px 5px 5px 10px;
+}
+
+.button {
+  font-family: "Metal Mania", cursive;
+  font-size: 24px;
+  width: 10%;
+  height: 70%;
+  margin: 8px 15px 5px 15px;
+}
+
+.errorText{
+  font-family:"Metal mania", cursive ;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error-img{
+  width: 30%;
+  height: 35%;
+  margin-left: 35% ;
+}
+
+
+#everyoneButton{
+  font-family: "Metal Mania", cursive;
+  width: 15%; 
+ 
+}
+
+.divTextarea{
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+}
+
+#inputChat {
+  width: 100%;
+  
+
+}
+
+#sendButton {
+  background-color: white;
+  font-size: 30px;
+  padding: 5px;
+}
+
+.bi-send {
+size: 100px;
+}
+
+.apiContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+#inputApiKey{
+  width: 400px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D1A879;
+  width: 310px;
+  height: 390px;
+  margin: 30px 55px;
+  border-radius: 20px;
+  justify-content: space-around;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chat {
+  width: 70%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #D1A879;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 2%;
+  margin-bottom: 1%;
+  margin-left: 15%;
+  padding: 20px
+}
+
+.infoAndImg{
+  max-width: 35%;
+}
+.chatStyle{
+  margin-left: 10%;
+
+}
+/* agregue margin top */
+#chatContainer {
+  width: 65%;
+  height: 16%;
+  margin-left: 8%;
+  
+ 
+  
+}
+
+#chatSection{
+  background-color: #fffefe;
+  overflow-y: scroll;
+  width: 250px;
+  height: 200px;
+
+}
+
+.img-chat {
+  width: 100px;
+  height: 98px;
+  margin-left: 15%;
+  margin-top: 9%;
+
+}
+
+.img-chat-everyone{
+  width: 150px;
+  height: 200px;
+ 
+  display: block;
+  margin: 0 auto
+
+}
+
+.infoChatName {
+  font-family: "Metal Mania", cursive;
+  font-size: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoChat {
+  font-family: 'Kanit', sans-serif;
+  font-size: 16px;
+  margin-left: 10%;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+  padding: auto;
+  font-weight: 200;
+}
+
+h3 {
+  font-family: "Metal Mania", cursive;
+  font-weight: 200;
+  font-size: 40px;
+  padding-top: 15px;
+}
+
+.description {
+  width: 270px;
+  font-family: "Rubik Mono One", regular;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bountyValue {
+  font-family: "Rye", cursive;
+  font-size: 16;
+  padding-bottom: 15px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-family: "Rye", cursive;
+  font-size: 5px;
+  margin-bottom: 5px;
+  color: #858585;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
 }
