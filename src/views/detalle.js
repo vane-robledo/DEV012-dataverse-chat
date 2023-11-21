@@ -2,13 +2,9 @@ import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "../components/chat.js";
-import { filterData } from "../lib/dataFunctions.js";
-import dataset from "../data/dataset.js";
-//import { navigateTo } from "../router.js";
 
-
-export const renderH = (informacion) => {
-  const chat= renderChat(informacion);
+export const renderCharacters = (element) => {
+  const chat= renderChat(element);
   const header = renderHeader()
   const nav = renderNav();
   nav.style.width = "100%";
@@ -18,22 +14,22 @@ export const renderH = (informacion) => {
   section2.classList.add("chat");
   section2.innerHTML+=`
   <div class = "infoAndImg">
-  <img class ="img-chat" src="${informacion.imageUrl}">
-  <h4 class = "infoChatName" itemprop="name">${informacion.name}</h3>
-  <h4 class = "infoChat"> "${informacion.description}"</h4>
-  <h4 class = "infoChat">Status: ${informacion.facts.status}</h4>
-  <h4 class = "infoChat">Origin: ${informacion.facts.seaOfOrigin}</h4>
-  <h4 class = "infoChat">Crew: ${informacion.facts.crewOrigin}</h4>
-  <h4 class = "infoChat">Bounty: ${informacion.facts.bounty}</h4>
+  <img class ="img-chat" src="${element.imageUrl}">
+  <h4 class = "infoChatName" itemprop="name">${element.name}</h3>
+  <h4 class = "infoChat"> "${element.description}"</h4>
+  <h4 class = "infoChat">Status: ${element.facts.status}</h4>
+  <h4 class = "infoChat">Origin: ${element.facts.seaOfOrigin}</h4>
+  <h4 class = "infoChat">Crew: ${element.facts.crewOrigin}</h4>
+  <h4 class = "infoChat">Bounty: ${element.facts.bounty}</h4>
   </div>` 
   
-  const divFiltro= nav.querySelector(".div-filtros");
-  divFiltro.style.display="none";
+  const divFilters= nav.querySelector(".div-filtros");
+  divFilters.style.display="none";
   const everyoneButton= nav.querySelector("#everyoneButton");
   everyoneButton.style.display= "none";
-  const titulo = nav.querySelector("#titulo");
-  titulo.style.display = "block";
-  titulo.innerHTML =  `CHAT WITH ${informacion.name}`;
+  const title = nav.querySelector("#titulo");
+  title.style.display = "block";
+  title.innerHTML =  `CHAT WITH ${element.name}`;
   
   section.appendChild(header);
   section.appendChild(nav); 

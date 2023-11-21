@@ -1,5 +1,4 @@
 import { navigateTo } from "../router.js";
-import { apiKey } from "../lib/chatApi.js";
 
 export const renderNav = () => {      
   const nav = document.createElement("nav");
@@ -55,48 +54,28 @@ export const renderNav = () => {
   <button id="apiKey" class="button">Api Key</button>
   <button id="everyoneButton" class="button">Chat With Everyone</button>
   </div>`;
-
  
   const homeIcon= nav.querySelector("#homeButton");
   homeIcon.addEventListener("click" ,(e) => {
     e.preventDefault();
-    console.log("funciona")    
-    navigateTo("/");
- 
+    navigateTo("/"); 
   });
 
-  const titulo = document.createElement("h2");
-  // dataset.forEach((element) => {
-  //   titulo.innerHTML =  `CHAT WITH ${element.name}`;
-  // })
+  const title = document.createElement("h2");
   
-  titulo.id = "titulo";
-  titulo.style.display = "none";
-  titulo.classList.add("detallesStyle");   
-  nav.appendChild(titulo); 
+  
+  title.id = "titulo";
+  title.style.display = "none";
+  title.classList.add("detallesStyle");   
+  nav.appendChild(title); 
 
   const apiKeyInput= nav.querySelector("#apiKey");
   apiKeyInput.addEventListener("click", (e) => {
 
     e.preventDefault();
     navigateTo("/api-key");
-  
-  // const usuario= prompt("Ingrese su apiKey");
-
-  // const guardarUsuario= usuario;
-
-  // if(guardarUsuario===apiKey){
-
-  //  alert("Api Key correcta, puedes chatear con todos los personajes")
-
-  // }else{
-
-
-  //   alert("Api Key incorrecto, por favor colocar el api key correcto.")
-  // }
-  
-  // console.log(guardarUsuario);
   })
+
   const everyoneButton = nav.querySelector("#everyoneButton");
 
   everyoneButton.addEventListener("click", (e) => {
@@ -104,6 +83,5 @@ export const renderNav = () => {
     navigateTo("/panel");
   });
  
-
 return nav;
 }
