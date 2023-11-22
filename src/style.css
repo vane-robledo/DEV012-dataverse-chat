@@ -203,6 +203,7 @@ button[data-testid="button-clear"] {
 
 #inputApiKey{
   width: 400px;
+  height: 30px;
 }
 
 .divApiButtons{

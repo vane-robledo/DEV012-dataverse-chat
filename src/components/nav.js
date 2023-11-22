@@ -78,10 +78,19 @@ export const renderNav = () => {
 
   const everyoneButton = nav.querySelector("#everyoneButton");
 
+  const apiSaved = localStorage.getItem("apiKey");
+
+
   everyoneButton.addEventListener("click", (e) => {
     e.preventDefault();
+    if(apiSaved === null){
+      navigateTo("/api-key")
+    }else{
     navigateTo("/panel");
+  }
   });
+
+
  
 return nav;
 }
