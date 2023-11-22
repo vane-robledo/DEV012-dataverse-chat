@@ -42,7 +42,9 @@ export const renderChat = (element) => {
       .catch((error) => {
         console.error("Error en la solicitud:", error);
         let apiError = document.createElement("p");
-        apiError.innerHTML = "Error de la solicitud";
+        apiError.innerHTML = "Error!";
+        apiError.style.color = "red";
+        apiError.style.fontSize = "25px";
         container.appendChild(apiError);
       }) 
     } else{
@@ -57,7 +59,9 @@ export const renderChat = (element) => {
       .catch((error) => {
         console.error("Error en la solicitud:", error);        
         let apiError = document.createElement("p");
-        apiError.innerHTML = "Error de la solicitud";
+        apiError.innerHTML = "Error!";
+        apiError.style.color = "red";
+        apiError.style.fontSize = "25px";
         container.appendChild(apiError);
       }) 
     }
