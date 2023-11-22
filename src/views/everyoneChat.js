@@ -2,9 +2,6 @@ import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "../components/chat.js";
-import dataset from "../data/dataset.js";
-
-//const personajes = dataset.map(element => element.name);
 
 export const renderEveryone = () => {
     const header = renderHeader();
@@ -24,8 +21,8 @@ export const renderEveryone = () => {
 
     const everyoneButton= nav.querySelector("#everyoneButton");
     everyoneButton.style.display= "none";
-    const divFiltro= nav.querySelector(".div-filtros");
-    divFiltro.style.display="none";
+    const divFilters= nav.querySelector(".div-filtros");
+    divFilters.style.display="none";
     const titulo = document.createElement("h2");
     titulo.innerHTML =  `CHAT WITH EVERYONE`;
     titulo.classList.add("detallesStyle"); 
