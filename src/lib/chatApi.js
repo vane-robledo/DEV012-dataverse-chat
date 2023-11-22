@@ -28,7 +28,8 @@ export function openIAapi(characters, userText) {
     return result;
   };
 
-  export function openIAapiIndividual(character, userText) {   
+  export function openIAapiIndividual(character, userText) { 
+    const apiKey = localStorage.getItem("apiKey"); 
     const data = {
         model: "gpt-3.5-turbo",
         messages: [
