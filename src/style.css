@@ -45,7 +45,7 @@ body {
 
 nav {
   display: flex;
-  width: 133%;
+  width: 100%;
   background-color: #A90000;
 }
 
@@ -80,7 +80,7 @@ nav {
 .div-filtros {
   display: flex;
   flex-direction: row;
-  width: 70%;
+  width: 100%;
 }
 
 .filters {
