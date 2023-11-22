@@ -16,11 +16,14 @@ export const renderHome = () => {
   const header = renderHeader();
   const showItems = document.createElement("div");
   showItems.classList.add("showItems");
-
+  const hometitle = document.createElement("h2");
+  hometitle.classList.add("hometitle")
+  hometitle.innerHTML = "Chat with your favorite characters!"
   
 
   section.appendChild(header);
   section.appendChild(nav);
+  section.appendChild(hometitle);
   showItems.appendChild(renderItems(dataset));
   section.appendChild(showItems);
   
