@@ -49,7 +49,7 @@ export const renderNav = () => {
   <option value="asc">Lowest</option>
   <option value="desc">Highest</option>
   </select>
-  <button data-testid="button-clear">Clear</button>
+  <button data-testid="button-clear" class="button">Clear</button>
   <button id="facts" class="button">Facts</button>
   <button id="apiKey" class="button">Api Key</button>
   <button id="everyoneButton" class="button">Chat With Everyone</button>

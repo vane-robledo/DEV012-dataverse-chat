@@ -16,11 +16,13 @@ export const renderCharacters = (element) => {
   <div class = "infoAndImg">
   <img class ="img-chat" src="${element.imageUrl}">
   <h4 class = "infoChatName" itemprop="name">${element.name}</h3>
+   <div class="description-queries">
   <h4 class = "infoChat"> "${element.description}"</h4>
   <h4 class = "infoChat">Status: ${element.facts.status}</h4>
   <h4 class = "infoChat">Origin: ${element.facts.seaOfOrigin}</h4>
   <h4 class = "infoChat">Crew: ${element.facts.crewOrigin}</h4>
   <h4 class = "infoChat">Bounty: ${element.facts.bounty}</h4>
+   </div>
   </div>` 
   
   const divFilters= nav.querySelector(".div-filtros");
