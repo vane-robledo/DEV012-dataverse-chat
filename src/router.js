@@ -30,6 +30,8 @@ export const navigateTo = (pathname, props = {}) => {
   renderView(pathname, props);
 };
 
-export const onURLChange = (location) => {
-  renderView(location);
+export const onURLChange = () => {
+  const pathname = window.location.pathname;
+  renderView(pathname);
 };
+window.onpopstate =  onURLChange
