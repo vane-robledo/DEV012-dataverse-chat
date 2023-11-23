@@ -1,6 +1,7 @@
 import { renderHeader } from "./components/header.js";
 import { renderNav } from "./components/nav.js";
 import { navigateTo } from "./router.js";
+import { openIAapi, openIAapiIndividual } from "./lib/chatApi.js";
 //import { renderFooter } from "./components/footer.js";
 
 export const renderApiKey = () => {
@@ -26,7 +27,7 @@ export const renderApiKey = () => {
   label.innerHTML = "Enter your API KEY:";
   label.classList.add("apiLabel");
   const input = document.createElement("input");
-  input.type = "text";
+  input.type = "password";
   input.placeholder = "Enter your API KEY";
   input.id = "inputApiKey";
   input.style.display = "block"
@@ -43,16 +44,16 @@ export const renderApiKey = () => {
   apiKeyButtonClear.innerHTML = "Delete";
   
 
-  apiKeyButton.addEventListener("click", () => {
+  apiKeyButton.addEventListener("click", (element) => {
     localStorage.setItem("apiKey", input.value);
-    const apiSaved = localStorage.getItem("apiKey");
-    if (apiSaved.length === 51) {
-      navigateTo("/");
-      
-    }else{
-      alert("Ingrese una apiKey válida")
-    }
-  });
+    const userText = "hola";
+    openIAapiIndividual(element.name, userText)
+    .then((response) => {if (response.status === 401 || response.status === 403) {
+      console.error("Error en la solicitud:");  
+      alert("Authentication error: invalid or missing token.");
+}else{navigateTo("/")}
+response.json()})} )
+
 
   apiKeyButtonClear.addEventListener("click", () => {
     localStorage.removeItem("apiKey");
