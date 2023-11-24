@@ -49,7 +49,7 @@ export const renderNav = () => {
   <option value="asc">Lowest</option>
   <option value="desc">Highest</option>
   </select>
-  <button data-testid="button-clear">Clear</button>
+  <button data-testid="button-clear" class="button">Clear</button>
   <button id="facts" class="button">Facts</button>
   <button id="apiKey" class="button">Api Key</button>
   <button id="everyoneButton" class="button">Chat With Everyone</button>
@@ -78,10 +78,19 @@ export const renderNav = () => {
 
   const everyoneButton = nav.querySelector("#everyoneButton");
 
+  const apiSaved = localStorage.getItem("apiKey");
+
+
   everyoneButton.addEventListener("click", (e) => {
     e.preventDefault();
+    if(apiSaved === null){
+      navigateTo("/api-key")
+    }else{
     navigateTo("/panel");
+  }
   });
+
+
  
 return nav;
 }

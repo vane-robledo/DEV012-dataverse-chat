@@ -11,7 +11,7 @@ export function openIAapi(characters, userText) {
         messages: [
           {
             role: "system",
-            content: `You are ${characters} a characters from One Piece, therefore respond collectively to all questions you can about their lives`,
+            content: `You are ${characters} characters from One Piece, therefore respond collectively to all questions you can about their lives`,
           },
           { role: "user", content: userText }
         ],
@@ -28,7 +28,8 @@ export function openIAapi(characters, userText) {
     return result;
   };
 
-  export function openIAapiIndividual(character, userText) {   
+  export function openIAapiIndividual(character, userText) { 
+    const apiKey = localStorage.getItem("apiKey"); 
     const data = {
         model: "gpt-3.5-turbo",
         messages: [

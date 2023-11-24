@@ -30,8 +30,11 @@ export const renderChat = (element) => {
     clearTextarea.value = "";
     const route = window.location.pathname;    
     if(route === "/panel"){
+      
     openIAapi(characters, userText)
-      .then((response) => response.json())
+      .then((response) => //{if (response.status === 401 || response.status === 403) {
+        //throw new Error("Error de autenticación: Token inválido o faltante.");}
+        response.json())
 
       .then((data) => { 
         let apiAnswer = document.createElement("p");
@@ -42,12 +45,18 @@ export const renderChat = (element) => {
       .catch((error) => {
         console.error("Error en la solicitud:", error);
         let apiError = document.createElement("p");
-        apiError.innerHTML = "Error de la solicitud";
+        apiError.innerHTML = "Authentication error: invalid or missing token.";
+        apiError.style.color = "red";
+        apiError.style.fontSize = "25px";
         container.appendChild(apiError);
       }) 
     } else{
       openIAapiIndividual(element.name, userText)
-      .then((response) => response.json())
+      .then((response) => 
+      // {if (response.status === 401 || response.status === 403) {
+      //   throw new Error("Error de autenticación: Token inválido o faltante.");}
+        response.json())
+
       .then((data) => {
         let apiAnswer = document.createElement("p");
         apiAnswer.innerHTML = data.choices[0].message.content;
@@ -57,7 +66,9 @@ export const renderChat = (element) => {
       .catch((error) => {
         console.error("Error en la solicitud:", error);        
         let apiError = document.createElement("p");
-        apiError.innerHTML = "Error de la solicitud";
+        apiError.innerHTML = "Authentication error: invalid or missing token.";
+        apiError.style.color = "red";
+        apiError.style.fontSize = "25px";
         container.appendChild(apiError);
       }) 
     }

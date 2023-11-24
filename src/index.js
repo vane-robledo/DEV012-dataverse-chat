@@ -1,5 +1,4 @@
 import { renderHome } from "./views/home.js";
-
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { error } from "./views/error.js";
 import { renderStats } from "./views/facts.js";
@@ -18,14 +17,13 @@ const routes = { "/": renderHome,
 };
 
 dataset.forEach((element) => {
-  routes[`/detalle-${element.id}`] = renderCharacters;
+  routes[`/detail-${element.id}`] = renderCharacters;
 });
 
 const rootRender = document.querySelector("#root");
 setRoutes(routes);
 setRootElement(rootRender);
 
-const charactersTitle = document.querySelector("h2");
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("sitio cargado");
   console.log(event.target.location.pathname);
