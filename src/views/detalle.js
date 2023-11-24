@@ -2,8 +2,12 @@ import { renderHeader } from "../components/header.js";
 import { renderNav } from "../components/nav.js";
 import { renderFooter } from "../components/footer.js";
 import { renderChat } from "../components/chat.js";
+import dataset from "../data/dataset.js";
 
-export const renderCharacters = (element) => {
+export const renderCharacters = () => {
+const id= window.location.pathname.replace("/detail-", "");
+const element= dataset.find((personaje)=>personaje.id===id);
+
   const chat= renderChat(element);
   const header = renderHeader()
   const nav = renderNav();
@@ -18,10 +22,10 @@ export const renderCharacters = (element) => {
   <h4 class = "infoChatName" itemprop="name">${element.name}</h3>
    <div class="description-queries">
   <h4 class = "infoChat"> "${element.description}"</h4>
-  <h4 class = "infoChat">Status: ${element.status}</h4>
-  <h4 class = "infoChat">Origin: ${element.seaOfOrigin}</h4>
-  <h4 class = "infoChat">Crew: ${element.crewOrigin}</h4>
-  <h4 class = "infoChat">Bounty: ${element.bounty}</h4>
+  <h4 class = "infoChat">Status: ${element.facts.status}</h4>
+  <h4 class = "infoChat">Origin: ${element.facts.seaOfOrigin}</h4>
+  <h4 class = "infoChat">Crew: ${element.facts.crewOrigin}</h4>
+  <h4 class = "infoChat">Bounty: ${element.facts.bounty}</h4>
    </div>
   </div>` 
   
