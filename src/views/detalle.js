@@ -5,9 +5,9 @@ import { renderChat } from "../components/chat.js";
 import dataset from "../data/dataset.js";
 
 export const renderCharacters = () => {
-const id= window.location.pathname.replace("/detail-", "");
-const element= dataset.find((personaje)=>personaje.id===id);
 
+  const id= window.location.pathname.replace("/detail-", "");
+  const element= dataset.find((personaje)=>personaje.id===id);
   const chat= renderChat(element);
   const header = renderHeader()
   const nav = renderNav();
@@ -36,6 +36,7 @@ const element= dataset.find((personaje)=>personaje.id===id);
   const title = nav.querySelector("#titulo");
   title.style.display = "block";
   title.innerHTML =  `CHAT WITH ${element.name}`;
+  console.log(title)
   
   section.appendChild(header);
   section.appendChild(nav); 
