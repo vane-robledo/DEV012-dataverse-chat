@@ -1,5 +1,5 @@
 import dataset from "../data/dataset.js";
-
+//api
 const endpoint = "https://api.openai.com/v1/chat/completions";
 export const characters = dataset.map(element => element.name );
 
