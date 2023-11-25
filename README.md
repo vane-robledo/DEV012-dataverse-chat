@@ -38,44 +38,6 @@ One Piece, ha cautivado a innumerables fanáticos con sus personajes fascinantes
 
 En este proyecto se pudo realizar el diseño de alta fidelidad a través de Figma y que pudiera ser de manera responsiva para moviles.
 
-<<<<<<< HEAD
-
-Imagen#1 Prototipo diseño de escritorio.
-
-![Prototipo #1 diseño de escritorio](/src/img/imagen%20_1.png)
-
-
-Imagen#2 Prototipo diseño de escritorio chat individual.
-
-![Prototipo #2 diseño de escritorio chat individual](/src/img/imagen%20_2.png)
-
-
-Imagen#3 Prototipo diseño de escritorio chat grupal.
-
-![Prototipo #3 diseño de escritorio chat grupal](/src/img/chat%20_grupal.png)
-
-## 5. Problemas detectados en tests de usabilidad
-
-## 6. Funcionalidades
-
-El objetivo de este proyecto, se requeria construir una pagina SPA que tuviera las mismas funcionalidades del proyecto anterior de filtar, ordenar y un boton para volver a la página principal Y se incorporó que se pudiera interactuar con los personajes a través de la IA. Para esto es requerido un ApiKey para que las conversaciónes con los personajes se pueda ejecutar.
-
-## 7.Consideraciones técnicas
-
-El proyecto tiene esta estructura detalladas y requeridas para poder tener todo segmentado y poder reutilizar los componentes para la vista de las paginas diseñadas para los personajes y la estadistica.
-
-
-![Diseño del proyecto](/src/img/diseño_%20del_%20proyecto.png)
-
-## 8. ApiKey
-
-Incorporamos un botón llamado Api Key , que a través de un input solicita la apiKey, esto le va a permitir al usuario interactual con cualquier personaje de manera individual o grupal. De no colocarse la apiKey no podrá comunicarse con su personaje y le arrojara un error.
-
-## 9.Prueba unitarias y Test
-
-
-## 10. Despliegue en Vercel
-=======
 Imagen#1 Prototipo diseño de escritorio.
 
 ![Prototipo #1 diseño de escritorio](/src/img/imagen_%20todos%20.png)
@@ -107,4 +69,3 @@ Incorporamos un botón llamado Api Key , que a través de un input solicita la a
 ## 9.Prueba unitarias y Test
 
 ## 10. Despliegue en Vercel
->>>>>>> main
