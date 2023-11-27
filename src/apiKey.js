@@ -1,14 +1,12 @@
 import { renderHeader } from "./components/header.js";
 import { renderNav } from "./components/nav.js";
 import { navigateTo } from "./router.js";
-import { openIAapi, openIAapiIndividual } from "./lib/chatApi.js";
-//import { renderFooter } from "./components/footer.js";
+import { openIAapiIndividual } from "./lib/chatApi.js";
 
 export const renderApiKey = () => {
   const header = renderHeader();
   const nav = renderNav();
   nav.style.width = "100%";
-  // const footer = renderFooter();
   const tittle = document.createElement("h2");
   tittle.innerHTML = `API KEY`;
   tittle.classList.add("apiStyle");
@@ -33,26 +31,29 @@ export const renderApiKey = () => {
   input.style.display = "block"
   const divApiButtons = document.createElement("div");
   divApiButtons.classList.add("divApiButtons");
-  let apiKeyButton = document.createElement("button");
+  const apiKeyButton = document.createElement("button");
   apiKeyButton.id = "apiKeyButton";
   apiKeyButton.classList.add("buttonKey");
   apiKeyButton.innerHTML = "Save";
 
-  let apiKeyButtonClear = document.createElement("button");
+  const apiKeyButtonClear = document.createElement("button");
   apiKeyButtonClear.id = "apiKeyButtonClear";
   apiKeyButtonClear.classList.add("buttonKey");
   apiKeyButtonClear.innerHTML = "Delete";
-  
+
 
   apiKeyButton.addEventListener("click", (element) => {
     localStorage.setItem("apiKey", input.value);
     const userText = "hola";
     openIAapiIndividual(element.name, userText)
-    .then((response) => {if (response.status === 401 || response.status === 403) {
-      console.error("Error en la solicitud:");  
-      alert("Authentication error: invalid or missing token.");
-}else{navigateTo("/")}
-response.json()})} )
+      .then((response) => {
+        if (response.status === 401 || response.status === 403) {
+          console.error("Error en la solicitud:");
+          alert("Authentication error: invalid or missing token.");
+        } else { navigateTo("/") }
+        response.json()
+      })
+  })
 
 
   apiKeyButtonClear.addEventListener("click", () => {

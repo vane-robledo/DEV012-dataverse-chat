@@ -1,7 +1,6 @@
 
-import { sortData, filterData, sortBounty, computeStats, computeStatsBounty } from '../src/dataFunctions.js';
+import { sortData, filterData, sortBounty, computeStats, computeStatsBounty } from '../src/lib/dataFunctions.js'
 import { names, crew, arrBounty, origin } from './data.js';
-
 
 describe("sortData", () => {
   it('returns characters sorted by name in ascending or descending order`', () => {

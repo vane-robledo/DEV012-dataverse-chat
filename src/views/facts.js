@@ -42,11 +42,11 @@ export const renderStats = () => {
       <h3>Crew Fact</h3>
     <img class = "facts-img" src="${"https://i.pinimg.com/originals/ff/e8/e8/ffe8e84d96f9417fec86d2b84470a0b6.jpg"}" alt="crew-img">
     `;
-    const pCrew = document.createElement("p");
-    pCrew.id = "idCrew";
-    pCrew.classList.add("factsInfo")
-    liCrew.appendChild(pCrew);
-    ul.appendChild(liCrew);
+  const pCrew = document.createElement("p");
+  pCrew.id = "idCrew";
+  pCrew.classList.add("factsInfo")
+  liCrew.appendChild(pCrew);
+  ul.appendChild(liCrew);
 
 
   //Render Bounty Card
@@ -63,7 +63,7 @@ export const renderStats = () => {
   liBounty.appendChild(pBounty);
   ul.appendChild(liBounty);
 
-  root.appendChild(ul);
+  
 
   const origin = ul.querySelector("#idOrigin");
   origin.textContent =
@@ -81,9 +81,9 @@ export const renderStats = () => {
     computeStatsBounty(dataset, "bounty", 315000000) +
     "% of the characters have a bounty over 315,000,000.";
 
-    section.appendChild(header);//agregue esto
-    section.appendChild(nav);
-    section.appendChild(ul);
-    section.appendChild(footer);
+  section.appendChild(header);//agregue esto
+  section.appendChild(nav);
+  section.appendChild(ul);
+  section.appendChild(footer);
   return section;
 };
