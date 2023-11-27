@@ -1,6 +1,6 @@
 import { navigateTo } from "../router.js";
 
-export const renderNav = () => {      
+export const renderNav = () => {
   const nav = document.createElement("nav");
   nav.classList.add("navStyle");
   nav.innerHTML += `
@@ -54,22 +54,22 @@ export const renderNav = () => {
   <button id="apiKey" class="button">Api Key</button>
   <button id="everyoneButton" class="button">Chat With Everyone</button>
   </div>`;
- 
-  const homeIcon= nav.querySelector("#homeButton");
-  homeIcon.addEventListener("click" ,(e) => {
+
+  const homeIcon = nav.querySelector("#homeButton");
+  homeIcon.addEventListener("click", (e) => {
     e.preventDefault();
-    navigateTo("/"); 
+    navigateTo("/");
   });
 
   const title = document.createElement("h2");
-  
-  
+
+
   title.id = "titulo";
   title.style.display = "none";
-  title.classList.add("detallesStyle");   
-  nav.appendChild(title); 
+  title.classList.add("detallesStyle");
+  nav.appendChild(title);
 
-  const apiKeyInput= nav.querySelector("#apiKey");
+  const apiKeyInput = nav.querySelector("#apiKey");
   apiKeyInput.addEventListener("click", (e) => {
 
     e.preventDefault();
@@ -83,14 +83,14 @@ export const renderNav = () => {
 
   everyoneButton.addEventListener("click", (e) => {
     e.preventDefault();
-    if(apiSaved === null){
+    if (apiSaved === null) {
       navigateTo("/api-key")
-    }else{
-    navigateTo("/panel");
-  }
+    } else {
+      navigateTo("/panel");
+    }
   });
 
 
- 
-return nav;
+
+  return nav;
 }
