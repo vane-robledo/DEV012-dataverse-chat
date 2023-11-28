@@ -4,7 +4,7 @@ import { error } from "./views/error.js";
 import { renderStats } from "./views/facts.js";
 import { renderCharacters } from "./views/detalle.js";
 import { renderEveryone } from "./views/everyoneChat.js";
-import { renderApiKey } from "./apiKey.js";
+import { renderApiKey } from "./views/apiKey.js";
 import dataset from "./data/dataset.js";
 
 
@@ -26,8 +26,7 @@ setRoutes(routes);
 setRootElement(rootRender);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  console.log("sitio cargado");
-  console.log(event.target.location.pathname);
+  
   onURLChange(event.target.location.pathname);
 });
 

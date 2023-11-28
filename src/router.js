@@ -26,7 +26,7 @@ export const navigateTo = (pathname, props = {}) => {
     
   const URLVisited = window.location.origin + pathname;
   history.pushState({}, "", URLVisited);
-  console.log(URLVisited)
+  
   renderView(pathname, props);
 };
 
