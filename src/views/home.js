@@ -47,12 +47,10 @@ export const renderHome = () => {
     e.preventDefault();
     const value = filterOrigin.value;
     const filteredOrigin = filterData(dataset, "seaOfOrigin", value);
-    console.log(filteredOrigin);
     showItems.innerHTML = "";
     filterCrew.value = "";
 
     const filteredList = renderItems(filteredOrigin);
-    console.log(filteredList);
     showItems.appendChild(filteredList);
     data = filteredOrigin;
   });

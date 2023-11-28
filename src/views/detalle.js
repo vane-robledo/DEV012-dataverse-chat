@@ -36,8 +36,7 @@ export const renderCharacters = () => {
   const title = nav.querySelector("#titulo");
   title.style.display = "block";
   title.innerHTML =  `CHAT WITH ${element.name}`;
-  console.log(title)
-  
+    
   section.appendChild(header);
   section.appendChild(nav); 
   section2.appendChild(chat);

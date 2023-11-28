@@ -442,11 +442,13 @@ label {
   font-family: "Metal Mania", cursive;
   font-weight: 200;
   font-size: 40px;
+  margin-left: 75px;
 }
 
 .facts-img {
-  width: 261px;
-  height: 400px;
+  width: 235px;
+  height: 247px;
+
 }
 
 .factsInfo {
