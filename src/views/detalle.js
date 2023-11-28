@@ -12,6 +12,8 @@ export const renderCharacters = () => {
   const header = renderHeader()
   const nav = renderNav();
   nav.style.width = "100%";
+  const menu = nav.querySelector("label")
+  menu.style.display = "none";
   const footer = renderFooter();
   const section= document.createElement("section");
   const section2= document.createElement("section");

@@ -4,8 +4,11 @@ import { navigateTo } from "../router.js";
 import { openIAapiIndividual } from "../lib/chatApi.js";
 
 export const renderApiKey = () => {
+  
   const header = renderHeader();
   const nav = renderNav();
+  const menu = nav.querySelector("label")
+  menu.style.display = "none";
   nav.style.width = "100%";
   const tittle = document.createElement("h2");
   tittle.innerHTML = `API KEY`;

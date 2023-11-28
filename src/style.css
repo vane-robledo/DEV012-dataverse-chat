@@ -437,7 +437,6 @@ label {
 
 .factsStyle {
   display: block;
-  margin: 0 auto;
   color: white;
   font-family: "Metal Mania", cursive;
   font-weight: 200;
@@ -446,8 +445,8 @@ label {
 }
 
 .facts-img {
-  width: 235px;
-  height: 247px;
+  width: 185px;
+  height: 180px;
 
 }
 
@@ -677,7 +676,7 @@ ul {
   margin-bottom: 10px;
   display: block;
   margin-top: 0;
-  margin-left: 75px;
+  margin-left: 57px;
   margin-right: 0;
 
 }

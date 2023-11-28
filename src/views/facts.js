@@ -11,6 +11,8 @@ export const renderStats = () => {
   const nav = renderNav();//agregue
   nav.style.width = "100%";
   const footer = renderFooter();//agregue
+  const menu = nav.querySelector("label")
+  menu.style.display = "none";
   
   const divFiltro= nav.querySelector(".div-filtros");
   divFiltro.style.display="none";
